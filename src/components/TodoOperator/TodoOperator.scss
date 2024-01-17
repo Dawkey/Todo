@@ -1,0 +1,132 @@
+.todo-operator{    
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f4f5f6;
+    .operator-header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 2rem;
+        margin: 0 1rem;
+        .button-back{
+            font-size: 1.5rem;
+        }
+        .button-confirm{
+            font-size: 1.4rem;
+        }        
+    }
+    .operator-body{
+        padding: 0.5rem 0.5rem;
+        .item-container{
+            display: flex;
+            min-height: 4rem;
+            margin: 0.5rem 0;
+            padding: 0 0.5rem;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f9fafb;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 0.25rem #f0f0f0;
+            .todo-item{
+                position: relative;
+                flex-grow: 1;
+                margin: 0.5rem 0.5rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                overflow: hidden;
+                .item-copy{
+                    min-height: 1.5rem;
+                    line-height: 1.5rem;
+                    word-wrap: break-word;
+                    opacity: 0;
+                }
+                .item-input{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                    background: inherit;
+                    color: inherit;
+                    padding: 0;
+                    font-family: inherit;
+                    resize: none;
+                    font-size: 1rem;
+                    line-height: 1.5rem;
+                    &:focus{
+                        outline: 0;
+                    }
+                }
+            }            
+            .button-check{
+                font-size: 1.2rem;
+                margin-bottom: -0.05rem;
+            }
+            .button-delete{
+                font-size: 1.25rem;
+            }
+            
+            .icon-point{
+                font-size: 1.2rem;
+                margin-bottom: -0.1rem;
+                transition: all 0.3s ease;
+                &.important{
+                    color: red;
+                }
+            }            
+            .icon-note{
+                font-size: 1.2rem;
+                margin-bottom: -0.1rem;
+            }
+        }
+
+        .operator-foot{
+            position: absolute;
+            width: 100%;
+            bottom: 1rem;
+            display: flex;
+            justify-content: center;
+            .button-delete{
+                font-size: 1.5rem;
+            }
+        }
+
+        .switch{
+            display: flex;
+            justify-content: center;
+            >input{
+                appearance: none;
+                position: relative;                
+                margin: 0;
+                height: 1.4rem;
+                width: 2.8rem;
+                background-color: #ddd;
+                border-radius: 0.7rem;
+                transition: all 0.3s ease;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    width: 1.2rem;
+                    height: 1.2rem;
+                    border-radius: 0.6rem;
+                    background-color: #fff;
+                    left: 0.1rem;
+                    top: 0.1rem;
+                    transition: all 0.3s ease;
+                }
+                &:checked{
+                    background-color: blue;
+                    &::before{
+                        left: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
